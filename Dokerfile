@@ -1,0 +1,11 @@
+# Imagen oficial de PHP con Apache
+FROM php:8.2-apache
+
+# Instalar extensiones necesarias (incluye MySQL)
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Copiar archivos del proyecto al servidor Apache
+COPY . /var/www/html/
+
+# Exponer el puerto
+EXPOSE 80
